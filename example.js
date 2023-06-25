@@ -49,6 +49,14 @@ client.on('message', async msg => {
     } else if (msg.body === '!ping') {
         // Send a new message to the same chat
         client.sendMessage(msg.from, 'pong');
+    } else if (msg.body === 'eu te amo') {
+        // Send a new message to the same chat
+        
+        client.sendMessage(msg.from, 'eu te amo mais mozinho ce ta trazendo marmita???');
+    } else if (msg.body === 'Eu te amo') {
+        // Send a new message to the same chat
+        
+        client.sendMessage(msg.from, 'eu te amo mais mozinho ce ta trazendo marmita???');
 
     } else if (msg.body.startsWith('!sendto ')) {
         // Direct send a new message to specific id
