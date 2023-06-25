@@ -1,12 +1,18 @@
 const { Client, Location, List, Buttons, LocalAuth } = require('./index');
+const qrcode = require('qrcode-terminal');
 
 const client = new Client({
     authStrategy: new LocalAuth(),
     // proxyAuthentication: { username: 'username', password: 'password' },
     puppeteer: { 
         // args: ['--proxy-server=proxy-server-that-requires-authentication.example.com'],
-        headless: false
+        headless: true
     }
+});
+
+
+client.on('qr', qr => {
+    qrcode.generate(qr, {small: true});
 });
 
 client.initialize();
